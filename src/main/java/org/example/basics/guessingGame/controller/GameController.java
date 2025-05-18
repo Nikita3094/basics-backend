@@ -1,21 +1,18 @@
-package org.example.basics.controller;
+package org.example.basics.guessingGame.controller;
 
+import org.example.basics.guessingGame.services.GameService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.example.basics.services.GameService;
 
 @RestController
 public class GameController {
 
+    @Autowired
+    private GameService gameService;
 
-    private final GameService gameService;
-
-
-    public GameController(GameService gameService) {
-        this.gameService = gameService;
-    }
 
     @PostMapping("/start")
     public String startGame() {

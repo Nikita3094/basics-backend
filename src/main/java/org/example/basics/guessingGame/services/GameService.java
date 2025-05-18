@@ -1,4 +1,4 @@
-package org.example.basics.services;
+package org.example.basics.guessingGame.services;
 
 
 import lombok.Getter;
